@@ -74,3 +74,15 @@ console.log(multiplicado);
 
 
 ```
+
+# Dia 03
+
+## Fetch API
+
+- Request (requisição)
+
+Leva o nosso pedido para a aplicação que contem as informações.
+
+- Response
+
+São os dados que recebemos dependendo da solicitação.
