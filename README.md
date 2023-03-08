@@ -79,6 +79,11 @@ console.log(multiplicado);
 
 ## Fetch API
 
+O que é Fetch API?
+
+Fetch api é uma função (nativa do js) assincrona que retorna dados de uma determinada api.
+Fetch por padrão é uma requisição get(mas podemos alterar esse padrão inserindo no 2º parametro)
+
 - Request (requisição)
 
 Leva o nosso pedido para a aplicação que contem as informações.
@@ -86,3 +91,26 @@ Leva o nosso pedido para a aplicação que contem as informações.
 - Response
 
 São os dados que recebemos dependendo da solicitação.
+
+## Sintaxe
+
+- No primeiro parametro: é a URL da api onde vamos buscar os dados, a fetch api é uma requisição assincrona, ou seja: caso tenhamos mais códigos abaixo da requição, ele não vai esperar a api retornar dados e vai dar sequencia no código.
+
+- then. : após lermos os dados de uma api, precisamos garantir que os dados foram lidos corretamente, ai entra o then() (tradução: depois da leitura da api, faça isso)
+
+```javascript:
+
+function pegarDados(){
+  fetch('https://dadosdaapi')
+  .then((resposta)=>{resposta.json})
+  .then((dados)=> console.log(dados))
+}
+```
+
+1º Then
+
+Estamos criando uma função para a resposta da api (os dados requisitados) e transformando em Json para que possamos ler esses dados: Fetch api não tras os dados de cara pois tem algumas trativas como headers, resposta e etc.
+
+2º then
+
+Criamos mais uma função mas agora para podermos ler os dados carregados pelo json
