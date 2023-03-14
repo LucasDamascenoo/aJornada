@@ -114,3 +114,61 @@ Estamos criando uma função para a resposta da api (os dados requisitados) e tr
 2º then
 
 Criamos mais uma função mas agora para podermos ler os dados carregados pelo json
+
+# Dia 04
+
+## UseState
+
+Antes de entrarmos no assunto de Hooks, precisamos entender os tipos de componentes que temos dentro do React, basicamente são dois,classes e funções, **hooks no react não funciona em componentes de classes**
+
+React trabalha com uma dom virtual, e com isso ele consegue estilizar um componente(alguma parte do site) individualmente sem precisar atualizar a página,mas para que isso ocorra, precisa está dentro de um state.
+
+```JavaScript:
+
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  function aumenta() {
+    setCount(count + 1);
+  }
+  return (
+    <div className="App">
+      <div>{count}</div>
+      <button onClick={aumenta}>Click para aumentar</button>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+## explicação:
+
+No código acima, criamos um "componente" que atualiza o valor toda vez que o user clicou no botão.
+
+Para atualizar o valor, precisamos utilizar o hook useState.
+
+- Primeiro passo:
+
+Para usar um hook do react, precisamos sempre importa-lo, por isso o :
+
+```JavaScript:
+
+import { useState } from "react";
+
+```
+
+- Segundo passo:
+
+Criamos uma constante (destruction) onde o count é o valor e o setCount(por convensão, utilizamos o set+nome da variavel antgerior) é a função, que recebe o useState() que tem como Parametro o valor inicial.
+
+```JavaScript:
+
+ const [count, setCount] = useState(0);
+
+```
